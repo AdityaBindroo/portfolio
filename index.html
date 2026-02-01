@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aditya Bindroo | Python Backend Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+    a { color: #38bdf8; text-decoration: none; }
+    header {
+      padding: 3rem 1.5rem;
+      text-align: center;
+      background: linear-gradient(135deg, #020617, #020617 60%, #0ea5e9 200%);
+    }
+    header h1 { font-size: 2.5rem; font-weight: 700; }
+    header p { margin-top: .75rem; color: #9ca3af; }
+    .container { max-width: 1000px; margin: auto; padding: 2.5rem 1.5rem; }
+    .section { margin-bottom: 3rem; }
+    .section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid #38bdf8;
+      padding-left: .75rem;
+    }
+    .card {
+      background: #020617;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,.3);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .tag {
+      display: inline-block;
+      background: #020617;
+      border: 1px solid #1e293b;
+      padding: .25rem .6rem;
+      border-radius: 999px;
+      font-size: .8rem;
+      margin: .2rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #6b7280;
+      border-top: 1px solid #1e293b;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: .6rem 1.1rem;
+      background: #38bdf8;
+      color: #020617;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: .2s;
+    }
+    .btn:hover { background: #0ea5e9; }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
+      <img src="profile.jpeg" alt="Aditya Bindroo" style="width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid #38bdf8;box-shadow:0 10px 30px rgba(0,0,0,.4);" />
+      <h1>Aditya Bindroo</h1>
+      <p>Python Backend Developer | FastAPI | AWS | SQLAlchemy</p>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;">
+      <a class="btn" href="#contact">Contact Me</a>
+      <a class="btn" href="resume_Aditya_Biondroo.pdf" download>Download Resume</a>
+    </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="section" id="about">
+      <h2>About Me</h2>
+      <div class="card">
+        <p>
+          Lead Software Engineer with 4.8 years of experience in backend development, system design, and cloud-based solutions. Skilled in Python, FastAPI, SQLAlchemy, and AWS, with strong expertise in modernizing legacy systems, building scalable microservices, and designing data-driven applications. Passionate about solving complex problems and delivering high-quality software solutions.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <h2>Technical Skills</h2>
+      <div class="card">
+        <h4>Programming Languages</h4>
+        <span class="tag">Python</span>
+        <span class="tag">Core Java</span>
+        <span class="tag">C</span>
+        <span class="tag">C++</span>
+        <h4 style="margin-top:1rem;">Frameworks & Libraries</h4>
+        <span class="tag">FastAPI</span>
+        <span class="tag">Pyramid</span>
+        <span class="tag">SQLAlchemy ORM</span>
+        <span class="tag">REST APIs</span>
+        <h4 style="margin-top:1rem;">Databases</h4>
+        <span class="tag">MySQL</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">SQL Server</span>
+        <span class="tag">DynamoDB</span>
+        <h4 style="margin-top:1rem;">Cloud & Tools</h4>
+        <span class="tag">AWS (S3, Lambda, EC2, RDS, API Gateway, Athena, IAM)</span>
+        <span class="tag">Git</span>
+        <span class="tag">GitHub</span>
+        <span class="tag">GitLab</span>
+        <span class="tag">Bitbucket</span>
+        <span class="tag">Nomad</span>
+        <span class="tag">Datadog</span>
+        <span class="tag">JIRA</span>
+        <span class="tag">VS Code</span>
+        <span class="tag">PyCharm</span>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <h2>Key Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Legacy SQL Modernization Platform</h3>
+          <p>Modernized legacy SQL Server stored procedures into scalable FastAPI microservices using SQLAlchemy ORM, improving maintainability and performance.</p>
+        </div>
+        <div class="card">
+          <h3>Clinical Document Processing System</h3>
+          <p>Built automated document extraction using AWS Textract and Lambda, enabling OCR for handwritten clinical notes and seamless integration with reporting systems.</p>
+        </div>
+        <div class="card">
+          <h3>Genomics Data Pipeline</h3>
+          <p>Designed cloud-based pipelines for processing genomics datasets using AWS services and Python, supporting large-scale data ingestion and analysis.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <h2>Professional Experience</h2>
+      <div class="card">
+        <h3>Lead Software Engineer</h3>
+        <p><strong>Persistent Systems</strong> | May 2021 – Present</p>
+        <hr style="margin:1rem 0;border:0;border-top:1px solid #1e293b;" />
+        <h4>Legacy SQL Server Modernization</h4>
+        <p><em>July 2025 – Present | Python, FastAPI, SQLAlchemy, SQL Server</em></p>
+        <ul>
+          <li>Migrating complex legacy SQL Server stored procedures into modern Python microservices using FastAPI.</li>
+          <li>Re-architecting business logic into scalable Python modules while preserving data integrity.</li>
+          <li>Implementing SQLAlchemy ORM models to replace raw SQL logic.</li>
+          <li>Validating outputs against legacy procedures to ensure accuracy.</li>
+          <li>Collaborating with cross-functional teams using Agile and Git workflows.</li>
+        </ul>
+        <h4>Patient Portal Laboratory</h4>
+        <p><em>Nov 2024 – June 2025 | Java, Python, SQL Server, AWS Textract</em></p>
+        <ul>
+          <li>Developed REST APIs and modules for patient and access portals.</li>
+          <li>Integrated AWS Textract and Lambda for handwritten clinical notes extraction.</li>
+          <li>Built connector services for LIMS data integration and report generation.</li>
+          <li>Led SQL scripting for data migrations and reporting.</li>
+        </ul>
+        <h4>Reports and Rule Engine</h4>
+        <p><em>Sept 2022 – Nov 2024 | Python, PostgreSQL, Pyramid</em></p>
+        <ul>
+          <li>Implemented REST APIs for clinical reporting and rule-based workflows.</li>
+          <li>Developed combination reports and SNOMED-based configurations.</li>
+          <li>Improved system observability using Datadog and Nomad.</li>
+        </ul>
+        <h4>GeneOS</h4>
+        <p><em>Nov 2021 – July 2022 | Python, AWS</em></p>
+        <ul>
+          <li>Built ingestion pipelines for genomics databases like ClinVar and GnomAD.</li>
+          <li>Designed event-driven workflows using AWS Lambda and EventBridge.</li>
+          <li>Developed REST APIs for data preview and UI integration.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p><strong>Phone:</strong> +91-9086935208</p>
+        <p><strong>Email:</strong> <a href="mailto:adityabindroo@gmail.com">adityabindroo@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/aditya-bindroo-1b8b77170/" target="_blank">linkedin.com/in/aditya-bindroo</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+      </div>
+    </section>
+  </div>
+
+  <section class="section" id="resume">
+      <h2>Resume</h2>
+      <div class="card">
+        <p>You can download my latest resume in PDF format.</p>
+        <a class="btn" href="resume.pdf" download>Download Resume (PDF)</a>
+      </div>
+    </section>
+
+  <footer>
+    <p>© 2026 Aditya Bindroo. All rights reserved.</p>
+  </footer>
+</body>
+</html>
