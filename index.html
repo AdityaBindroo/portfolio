@@ -4,8 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aditya Bindroo | Python Backend Developer</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS for scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
+    /* --- Reset & Base --- */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', sans-serif;
@@ -14,34 +21,106 @@
       line-height: 1.6;
     }
     a { color: #38bdf8; text-decoration: none; }
+    ul { list-style-type: disc; margin-left: 1.25rem; }
+
+    /* --- Header / Hero --- */
     header {
-      padding: 3rem 1.5rem;
+      padding: 4rem 1.5rem;
       text-align: center;
-      background: linear-gradient(135deg, #020617, #020617 60%, #0ea5e9 200%);
+      position: relative;
+      background: url('python-tech-bg.jpg') no-repeat center center/cover;
+      overflow: hidden;
     }
-    header h1 { font-size: 2.5rem; font-weight: 700; }
-    header p { margin-top: .75rem; color: #9ca3af; }
+    /* Dark overlay for text readability */
+    header::before {
+      content: '';
+      position: absolute;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: rgba(15,23,42,0.7);
+      z-index:0;
+    }
+    header > div {
+      position: relative;
+      z-index:1;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:1rem;
+    }
+    header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #FFD43B; /* Python yellow */
+      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    header h1 { font-size: 2.5rem; font-weight: 700; color: #FFD43B; }
+    header p { margin-top: .5rem; color: #e0e7ff; font-weight: 500; }
+
+    /* --- Buttons --- */
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: .6rem 1.2rem;
+      background: #306998; /* Python blue */
+      color: #FFD43B;       /* Python yellow */
+      border-radius: 8px;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .btn::after {
+      content: '';
+      position: absolute;
+      width: 100%; height: 100%;
+      top: 0; left: -100%;
+      background: rgba(255,255,255,0.1);
+      transition: all 0.3s ease;
+    }
+    .btn:hover::after { left: 0; }
+    .btn:hover { background: #FFD43B; color: #306998; }
+
+    /* --- Container / Sections --- */
     .container { max-width: 1000px; margin: auto; padding: 2.5rem 1.5rem; }
     .section { margin-bottom: 3rem; }
     .section h2 {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       margin-bottom: 1rem;
-      border-left: 4px solid #38bdf8;
+      border-left: 4px solid #FFD43B;
       padding-left: .75rem;
     }
+
+    /* --- Card --- */
     .card {
       background: #020617;
       border: 1px solid #1e293b;
       border-radius: 14px;
-      padding: 1.25rem;
+      padding: 1.5rem;
       margin-bottom: 1rem;
       box-shadow: 0 10px 30px rgba(0,0,0,.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0,0,0,.5);
+    }
+
+    /* --- Grid --- */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1rem;
     }
+
+    /* --- Tags --- */
     .tag {
       display: inline-block;
       background: #020617;
@@ -50,41 +129,52 @@
       border-radius: 999px;
       font-size: .8rem;
       margin: .2rem;
+      transition: transform 0.2s ease, background 0.2s ease;
     }
+    .tag:hover {
+      transform: scale(1.2);
+      background: #306998;
+      color: #FFD43B;
+    }
+
+    /* --- Footer --- */
     footer {
       text-align: center;
       padding: 2rem 1rem;
       color: #6b7280;
       border-top: 1px solid #1e293b;
     }
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: .6rem 1.1rem;
-      background: #38bdf8;
-      color: #020617;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: .2s;
+
+    /* --- Social Links --- */
+    .social-links a {
+      margin: 0 0.5rem;
+      font-size: 1.2rem;
+      color: #FFD43B;
+      transition: color 0.3s;
     }
-    .btn:hover { background: #0ea5e9; }
+    .social-links a:hover { color: #306998; }
   </style>
 </head>
 <body>
   <header>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
-      <img src="profile.jpeg" alt="Aditya Bindroo" style="width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid #38bdf8;box-shadow:0 10px 30px rgba(0,0,0,.4);" />
+    <div>
+      <img src="profile.jpeg" alt="Aditya Bindroo" />
       <h1>Aditya Bindroo</h1>
       <p>Python Backend Developer | FastAPI | AWS | SQLAlchemy</p>
       <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;">
-      <a class="btn" href="#contact">Contact Me</a>
-      <a class="btn" href="resume_Aditya_Biondroo.pdf" download>Download Resume</a>
-    </div>
+        <a class="btn" href="#contact">Contact Me</a>
+        <a class="btn" href="resume_Aditya_Biondroo.pdf" download>Download Resume</a>
+      </div>
+      <div class="social-links" style="margin-top:1rem;">
+        <a href="https://github.com/yourusername" target="_blank">🐱 GitHub</a>
+        <a href="https://www.linkedin.com/in/aditya-bindroo-1b8b77170/" target="_blank">💼 LinkedIn</a>
+      </div>
     </div>
   </header>
 
   <div class="container">
-    <section class="section" id="about">
+    <!-- About Me -->
+    <section class="section" id="about" data-aos="fade-up">
       <h2>About Me</h2>
       <div class="card">
         <p>
@@ -93,7 +183,8 @@
       </div>
     </section>
 
-    <section class="section" id="skills">
+    <!-- Skills -->
+    <section class="section" id="skills" data-aos="fade-up">
       <h2>Technical Skills</h2>
       <div class="card">
         <h4>Programming Languages</h4>
@@ -125,7 +216,8 @@
       </div>
     </section>
 
-    <section class="section" id="projects">
+    <!-- Projects -->
+    <section class="section" id="projects" data-aos="fade-up">
       <h2>Key Projects</h2>
       <div class="grid">
         <div class="card">
@@ -143,47 +235,8 @@
       </div>
     </section>
 
-    <section class="section" id="experience">
-      <h2>Professional Experience</h2>
-      <div class="card">
-        <h3>Lead Software Engineer</h3>
-        <p><strong>Persistent Systems</strong> | May 2021 – Present</p>
-        <hr style="margin:1rem 0;border:0;border-top:1px solid #1e293b;" />
-        <h4>Legacy SQL Server Modernization</h4>
-        <p><em>July 2025 – Present | Python, FastAPI, SQLAlchemy, SQL Server</em></p>
-        <ul>
-          <li>Migrating complex legacy SQL Server stored procedures into modern Python microservices using FastAPI.</li>
-          <li>Re-architecting business logic into scalable Python modules while preserving data integrity.</li>
-          <li>Implementing SQLAlchemy ORM models to replace raw SQL logic.</li>
-          <li>Validating outputs against legacy procedures to ensure accuracy.</li>
-          <li>Collaborating with cross-functional teams using Agile and Git workflows.</li>
-        </ul>
-        <h4>Patient Portal Laboratory</h4>
-        <p><em>Nov 2024 – June 2025 | Java, Python, SQL Server, AWS Textract</em></p>
-        <ul>
-          <li>Developed REST APIs and modules for patient and access portals.</li>
-          <li>Integrated AWS Textract and Lambda for handwritten clinical notes extraction.</li>
-          <li>Built connector services for LIMS data integration and report generation.</li>
-          <li>Led SQL scripting for data migrations and reporting.</li>
-        </ul>
-        <h4>Reports and Rule Engine</h4>
-        <p><em>Sept 2022 – Nov 2024 | Python, PostgreSQL, Pyramid</em></p>
-        <ul>
-          <li>Implemented REST APIs for clinical reporting and rule-based workflows.</li>
-          <li>Developed combination reports and SNOMED-based configurations.</li>
-          <li>Improved system observability using Datadog and Nomad.</li>
-        </ul>
-        <h4>GeneOS</h4>
-        <p><em>Nov 2021 – July 2022 | Python, AWS</em></p>
-        <ul>
-          <li>Built ingestion pipelines for genomics databases like ClinVar and GnomAD.</li>
-          <li>Designed event-driven workflows using AWS Lambda and EventBridge.</li>
-          <li>Developed REST APIs for data preview and UI integration.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
+    <!-- Contact -->
+    <section class="section" id="contact" data-aos="fade-up">
       <h2>Contact</h2>
       <div class="card">
         <p><strong>Phone:</strong> +91-9086935208</p>
@@ -192,18 +245,25 @@
         <p><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
       </div>
     </section>
-  </div>
 
-  <section class="section" id="resume">
+    <!-- Resume -->
+    <section class="section" id="resume" data-aos="fade-up">
       <h2>Resume</h2>
       <div class="card">
         <p>You can download my latest resume in PDF format.</p>
         <a class="btn" href="resume_Aditya_Biondroo.pdf" download>Download Resume (PDF)</a>
       </div>
     </section>
+  </div>
 
-  <footer>
+  <footer data-aos="fade-up">
     <p>© 2026 Aditya Bindroo. All rights reserved.</p>
   </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 </body>
 </html>
